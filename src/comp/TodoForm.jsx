@@ -1,8 +1,18 @@
 import React from 'react'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { AddTodo } from '../features/todo/todoSlice'
 
 function TodoForm() {
     const [input, setInput]=useState('')
+    const dispatch=useDispatch()
+    const addTodoHandler =(e)=>{
+            e.preventDefault()
+            dispatch(AddTodo(input))
+            setInput('')
+
+
+    }
 
   return (
     <div>

@@ -1,8 +1,10 @@
-import {createSlice,nanoid} from '@redux/toolkit'
+import {createSlice,nanoid} from '@reduxjs/toolkit';
 
 const initialState={
     todos:[{id:1,text:"daniyal"}]
+    
 }
+
 
 export const todoSlice=createSlice({
     name:'todo',
@@ -15,6 +17,7 @@ export const todoSlice=createSlice({
                 
             }
             state.todos.push(todo)
+           
 
         },
         RemoveTodo:(state,action)=>{
@@ -22,9 +25,12 @@ export const todoSlice=createSlice({
 
         }
         
+        
     }
     
+    
 })
+
 
 export const {RemoveTodo,AddTodo}=todoSlice.actions
 export default todoSlice.reducer
